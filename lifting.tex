@@ -1,0 +1,20 @@
+\documentclass{standalone}
+
+\usepackage[all]{xy}
+\usepackage{xcolor}
+
+\definecolor{fg-color}{rgb}{0.16862745098039217,0.21568627450980393,0.2}
+\definecolor{bg-color}{rgb}{0.7372549019607844,0.7098039215686275,0.5490196078431373}
+
+\begin{document}
+\pagecolor{bg-color}
+\color{fg-color}
+\(
+\xymatrix@M=6pt@C=12pt@R=12pt{
+ A \ar[rr] \ar@{>->}[dr]^-{\sim} &  & X \ar@{->>}[dr] &  \\
+  & B \ar[rr] \ar@{.>}[ur] &  & Y \\
+ I \ar[rr] \ar@{>->}[dr]^-{\sim} &  & K \ar@{->>}[dr] &  \\
+  & J \ar[rr] \ar[ur] &  & L \\
+}
+\)
+\end{document}
