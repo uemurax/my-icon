@@ -1,6 +1,7 @@
 \documentclass{standalone}
 
-\usepackage[all]{xy}
+\usepackage{tikz}
+\usetikzlibrary{cd}
 \usepackage{xcolor}
 
 \definecolor{fg-color}{rgb}{0.16862745098039217,0.21568627450980393,0.2}
@@ -10,11 +11,13 @@
 \pagecolor{bg-color}
 \color{fg-color}
 \(
-\xymatrix@M=6pt@C=12pt@R=12pt{
- A \ar[rr] \ar@{>->}[dr]^-{\sim} &  & X \ar@{->>}[dr] &  \\
-  & B \ar[rr] \ar@{.>}[ur] &  & Y \\
- I \ar[rr] \ar@{>->}[dr]^-{\sim} &  & K \ar@{->>}[dr] &  \\
-  & J \ar[rr] \ar[ur] &  & L \\
-}
+\begin{tikzcd}[row sep=6ex]
+  A \arrow[rr] \arrow[rightarrowtail,dr,"\sim"] &  &
+  X \arrow[twoheadrightarrow,dr] &  \\
+  & B \arrow[rr] \arrow[dashrightarrow,ur] &  & Y \\
+  I \arrow[rr] \arrow[rightarrowtail,dr,"\sim"] &  &
+  K \arrow[twoheadrightarrow,dr] &  \\
+  & J \arrow[rr] \arrow[ur] &  & L
+\end{tikzcd}
 \)
 \end{document}
