@@ -1,0 +1,24 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{cd}
+
+\begin{document}
+\begin{tikzcd}[column sep=3ex]
+  fx \arrow[-,r,"\bar{x}"]
+  & x' \arrow[-,bend left=50,r,"\mathsf{refl}_{x'}",""{name=r0,below}]
+  \arrow[-,bend right=50,r,"\mathsf{refl}_{x'}"',""{name=r1,above}]
+  \arrow[equal,bend left=50,from=r0,"\mathsf{refl}^{2}_{x'}",""{name=rr0,left},to=r1]
+  \arrow[equal,bend right=50,from=r0,"\mathsf{refl}^{2}_{x'}"',""'{name=rr1,right},to=r1]
+  \arrow[equal,from=rr0,"p'",to=rr1] \arrow[-,from=rr0,to=rr1]
+  & [13ex] x'
+\end{tikzcd} = \begin{tikzcd}[column sep=3ex]
+  fx \arrow[-,bend left=50,r,"\mathsf{refl}_{fx}",""{name=r0,below}]
+  \arrow[-,bend right=50,r,"\mathsf{refl}_{fx}"',""{name=r1,above}]
+  \arrow[equal,bend left=50,from=r0,"\mathsf{refl}^{2}_{fx}",""{name=rr0,left},to=r1]
+  \arrow[equal,bend right=50,from=r0,"\mathsf{refl}^{2}_{fx}"',""'{name=rr1,right},to=r1]
+  \arrow[equal,from=rr0,"fp",to=rr1] \arrow[-,from=rr0,to=rr1]
+  & [13ex] fx \arrow[-,r,"\bar{x}"]
+  & x'
+\end{tikzcd}
+\end{document}
