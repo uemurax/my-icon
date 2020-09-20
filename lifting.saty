@@ -1,0 +1,44 @@
+@require: base/typeset/satysfi-it
+@require: ncsq/ncsq
+@require: math
+
+open NCSq
+
+let scal = 3.
+
+let-inline ctx \ctx it =
+let ctx1 = (
+  ctx
+  |> set-font-size (get-font-size ctx *' scal)
+  |> set-text-color (RGB (0.16862745098039217, 0.21568627450980393, 0.2))
+) in
+read-inline ctx1 it
+
+let pd = 10pt *' scal
+
+in
+
+satysfi-it ?*?:(pd, pd, pd, pd) ${\text!{\ctx{${
+  \cd-m!(open NCSqArrowStyle in [
+    [object ${A}; empty;
+     arrow right; empty;
+     object ${X}];
+    [empty; arrow ?:${\sim}?*?:tail (rd (1, 1));
+     empty; arrow ?*?*?:dashed (ru (1, 1)); empty;
+     arrow ?*?*?:two-heads (rd (1, 1))];
+    [empty; empty;
+     object ${B}; empty;
+     arrow right; empty;
+     object ${Y}];
+    [object ${I}; empty;
+     arrow right; empty;
+     object ${K}];
+    [empty; arrow ?:${\sim}?*?:tail (rd (1, 1));
+     empty; arrow (ru (1, 1)); empty;
+     arrow ?*?*?:two-heads (rd (1, 1))];
+    [empty; empty;
+     object ${J}; empty;
+     arrow right; empty;
+     object ${L}];
+  ])
+}}}}
